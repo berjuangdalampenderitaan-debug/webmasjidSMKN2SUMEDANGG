@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masjid baitul-rohim SMKN 2 Sumedang</title>
+<link rel="icon" href="https://i.ibb.co/kVCKZ35/LOGO-SMKN2SUMEDANG.png">
+<style>
+:root{--hijau:#006400;--hijau-tua:#004d00;--emas:#ffd700;--card:#f4f9f4;--bg:#f8f9fa;--text:#333;--card-soft:#e8f5e9;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"Segoe UI", Arial, sans-serif;margin:0;padding:0;background:var(--bg);color:var(--text);transition:background .3s,color .3s;}
+.top-header{display:flex;align-items:center;justify-content:center;gap:15px;padding:15px 20px;background:var(--hijau);color:#fff;position:relative;}
+.top-header img{width:60px;border-radius:8px;background:#fff;padding:5px;}
+.top-header h1{margin:0;font-size:1.8rem;}
+.top-header p{margin:0;opacity:.9;}
+.dark-toggle{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:#fff;color:var(--hijau);border:none;cursor:pointer;padding:6px 12px;border-radius:20px;font-weight:700;transition:background .3s,color .3s,transform .2s;}
+.dark-toggle:hover{background:var(--hijau-tua);color:#fff;transform:translateY(-50%) scale(1.05);}
+header{position:relative;text-align:center;color:#fff;}
+header img{width:100%;height:260px;object-fit:cover;filter:brightness(60%);}
+header .overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 16px;}
+header h2{margin:0;font-size:2rem;}
+header p{margin-top:8px;font-size:1.05rem;}
+nav{position:sticky;top:0;z-index:1000;text-align:center;background:var(--hijau-tua);padding:12px 20px;box-shadow:0 2px 6px rgba(0,0,0,.08);}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:700;transition:color .3s,transform .2s;}
+nav a:hover{color:var(--emas);transform:scale(1.05);}
+.container{width:92%;max-width:980px;margin:20px auto;background:#fff;color:var(--text);padding:20px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.08);animation:fadeIn .7s ease;transition:background .3s,color .3s,box-shadow .3s;}
+h2{color:var(--hijau);margin:0 0 10px 0;}
+.muted{color:#777;font-size:.92rem;}
+.card{background:var(--card);padding:16px;border-radius:10px;margin:12px 0;transition:transform .25s,box-shadow .25s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,0,0,.12);}
+.list-unstyled{margin:0;padding-left:18px;}
+.jadwal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px;}
+@media(min-width:560px){.jadwal-grid{grid-template-columns:repeat(3,1fr);}}
+.slot{background:var(--card-soft);border-radius:8px;padding:10px;text-align:center;font-weight:700;}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0;}
+select,button,input{padding:8px 10px;border-radius:8px;border:1px solid #ddd;outline:none;}
+button.primary{background:var(--hijau);color:#fff;border:0;font-weight:700;cursor:pointer;transition:opacity .2s,transform .2s;}
+button.primary:hover{opacity:.9;transform:translateY(-1px);}
+.hint{font-size:.85rem;color:#777;margin-top:8px;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:8px;}
+.gallery img{width:100%;border-radius:12px;display:block;transition: transform .25s, box-shadow .25s;box-shadow:0 4px 10px rgba(0,0,0,.08);cursor:pointer;}
+.gallery img:hover{transform:scale(1.04);box-shadow:0 8px 18px rgba(0,0,0,.15);}
+.lightbox{display:none;position:fixed;z-index:9999;padding-top:80px;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.9);text-align:center;}
+.lightbox-content{max-width:90%;max-height:80%;border-radius:10px;}
+.close{position:absolute;top:20px;right:35px;color:#fff;font-size:40px;font-weight:bold;cursor:pointer;}
+#caption{margin-top:10px;color:#ddd;font-size:18px;}
+#hijriDate{opacity:0;transition:opacity 1s ease-in-out;}
+#hijriDate.show{opacity:1;}
+footer{margin-top:30px;padding:18px;text-align:center;color:#fff;background:linear-gradient(135deg,#003366,var(--hijau-tua));font-size:.92rem;letter-spacing:.3px;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+body.dark{--bg:#121212;--text:#e6e6e6;--card:#1f2721;--card-soft:#263329;}
+body.dark .top-header,body.dark nav{background:#1e1e1e;}
+body.dark .container{background:#1b1b1b;box-shadow:0 6px 16px rgba(0,0,0,.35);}
+body.dark h2{color:#87d68d;}
+body.dark .dark-toggle{background:#333;color:#fff;}
+body.dark select,body.dark input{background:#262626;color:#eee;border:1px solid #3a3a3a;}
+body.dark .slot{color:#e9ffe9;}
+</style>
+</head>
+<body>
+<!-- Header -->
+<div class="top-header" role="banner">
+<img src="logo.png" alt="Logo SMKN 2 Sumedang">
+<div>
+<h1>Masjid baitul-rohim SMKN 2 Sumedang</h1>
+<p>“Rumah Allah, Tempat Kita Bersujud”</p>
+</div>
+<button class="dark-toggle" aria-label="Toggle dark mode" onclick="toggleDarkMode()">🌙</button>
+</div>
+
+<!-- Hero -->
+<header>
+<img src="simulasi.jpg" alt="Ilustrasi Masjid">
+<div class="overlay">
+<h2>Selamat Datang di blog masjid baitul-rohim</h2>
+<p>Informasi kegiatan, artikel islami, dan dakwah di lingkungan SMKN 2 Sumedang</p>
+</div>
+</header>
+
+<!-- Navbar -->
+<nav aria-label="Navigasi utama">
+<a href="#beranda">Beranda</a>
+<a href="#tentang">Tentang</a>
+<a href="#kegiatan">Kegiatan</a>
+<a href="#artikel">Artikel</a>
+<a href="#jadwal">Jadwal Sholat</a>
+<a href="#galeri">Galeri</a>
+<a href="#media">Media</a>
+<a href="#kontak">Kontak</a>
+</nav>
+
+<!-- Beranda -->
+<section class="container" id="beranda">
+<h2>Selamat Datang</h2>
+<p>Assalamu’alaikum warahmatullahi wabarakatuh. Website ini menjadi sarana informasi kegiatan, artikel islami, serta pengumuman resmi Masjid baitul-rohim SMKN 2 Sumedang.</p>
+<p class="muted">“Barangsiapa menempuh jalan untuk mencari ilmu, Allah akan mudahkan baginya jalan menuju surga.”</p>
+</section>
+
+<!-- Tentang -->
+<section class="container" id="tentang">
+<h2>Tentang Masjid</h2>
+<div class="card">
+<p><strong>Singkat:</strong> Sebagai pusat ibadah, dakwah, pendidikan Al-Qur’an, dan kegiatan sosial warga sekolah SMKN 2 Sumedang.</p>
+<p><strong>Visi:</strong> Mewujudkan generasi berakhlak mulia, cerdas, dan cinta masjid.</p>
+<p><strong>Misi:</strong> Memakmurkan masjid melalui shalat berjamaah, kajian rutin, TPA, dan kegiatan sosial.</p>
+</div>
+</section>
+<!-- Kegiatan -->
+<section class="container" id="kegiatan">
+<h2>Kegiatan Terbaru</h2>
+<div class="card">
+<ul class="list-unstyled">
+<li>▪ Kajian Rutin: Setiap Jumat sholat Dhuha bersama</li>
+<li>▪ Anak-anak: Senin – Jumat pukul 16.00 per kelas membersihkan masjid</li>
+</ul>
+</div>
+</section>
+
+<!-- Artikel -->
+<section class="container" id="artikel">
+<h2>Artikel Islami</h2>
+<div class="card">
+<h3 style="margin:0 0 6px 0">Pentingnya Shalat Berjamaah</h3>
+<p>Shalat berjamaah di masjid memiliki pahala yang berlipat. Mari kita biasakan memakmurkan masjid, menjaga waktu, dan saling menasihati dalam kebaikan.</p>
+</div>
+</section>
+
+<!-- Jadwal Sholat -->
+<section class="container" id="jadwal">
+<h2>Jadwal Sholat Hari Ini</h2>
+<div id="hijriDate" class="muted"></div>
+<div class="controls">
+<label for="kotaSelect"><strong>Pilih Kota:</strong></label>
+<select id="kotaSelect"></select>
+<button class="primary" id="refreshBtn">Muat Ulang</button>
+<span id="status" class="muted">Memuat daftar kota…</span>
+</div>
+<div class="jadwal-grid" id="jadwalGrid" aria-live="polite" aria-busy="true">
+<div class="slot">Subuh: 04:34</div>
+<div class="slot">Dzuhur: 05:53</div>
+<div class="slot">Ashar: 11:51</div>
+<div class="slot">Maghrib: 15:11</div>
+<div class="slot">Isya: 17:49</div>
+<div class="slot">Jumat:18-59</div>
+</div>
+<p class="hint">* Otomatis dari MyQuran. Jika lokasi tidak akurat, pilih kota manual.</p>
+</section>
+
+<!-- Galeri -->
+<section class="container" id="galeri">
+<h2>Galeri Kegiatan</h2>
+<div class="gallery">
+<img src="1.jpg" alt="Kegiatan Masjid 1">
+<img src="2.jpg" alt="Kegiatan Masjid 2">
+<img src="3.jpg" alt="Kegiatan Masjid 3">
+<img src="4.jpg" alt="Kegiatan Masjid 4">
+<img src="5.jpg" alt="Kegiatan Masjid 5">
+<img src="6.jpg" alt="Kegiatan Masjid 6">
+<img src="7.jpg" alt="Kegiatan Masjid 7">
+<img src="8.jpg" alt="Kegiatan Masjid 8">
+<img src="9.jpg" alt="Kegiatan Masjid 9">
+<img src="10.jpg" alt="Kegiatan Masjid 10">
+</div>
+</section>
+
+<!-- Media (Video Kajian) -->
+<section class="container" id="media">
+<h2>Video Kajian</h2>
+<div class="card">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/ZvHjTrBZtx0yq5JX" title="Video Kajian" frameborder="0" allowfullscreen></iframe>
+</div>
+</section>
+
+<!-- Kontak -->
+<section class="container" id="kontak">
+<h2>Kontak</h2>
+<div class="card">
+<p><strong>Alamat:</strong> Jl. Arif Rahman Hakim No.59 Desa/Kelurahan Situ, Kecamatan Sumedang, Provinsi Jawa Barat</p>
+<p><strong>Email:</strong> masjidbaitulrohim@gmail.com</p>
+<p><strong>Telepon:</strong> 083869393387</p>
+<p><strong>Media Sosial:</strong> <a href="#" target="_blank">Facebook</a> | <a href="#" target="_blank">Instagram</a></p>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2025 Masjid baitul-rohim SMKN 2 Sumedang</p>
+</footer>
+
+<!-- Audio Adzan -->
+<audio id="adzanAudio" src="adan.mp3" preload="auto"></audio>
+
+<!-- Script Interaktif -->
+<script>
+// ===== Dark Mode =====
+const btnToggle=document.querySelector('.dark-toggle');
+function applyTheme(theme){
+if(theme==='dark'){document.body.classList.add('dark');btnToggle.textContent='☀️';} 
+else{document.body.classList.remove('dark');btnToggle.textContent='🌙';}
+}
+function toggleDarkMode(){
+const nowDark=!document.body.classList.contains('dark');
+const theme=nowDark?'dark':'light';
+localStorage.setItem('theme',theme);
+applyTheme(theme);
+}
+applyTheme(localStorage.getItem('theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+
+// ===== Jadwal Sholat MyQuran =====
+const kotaSelect=document.getElementById('kotaSelect');
+const statusEl=document.getElementById('status');
+const grid=document.getElementById('jadwalGrid');
+const refreshBtn=document.getElementById('refreshBtn');
+async function fetchJSON(url){const r=await fetch(url);if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}
+function setBusy(b){grid.setAttribute('aria-busy',b?'true':'false');statusEl.textContent=b?'Memuat…':'Siap';}
+function renderJadwal(j){
+grid.innerHTML=`<div class="slot">Subuh: ${j.subuh}</div>
+<div class="slot">Dzuhur: ${j.dzuhur}</div>
+<div class="slot">Ashar: ${j.ashar}</div>
+<div class="slot">Maghrib: ${j.maghrib}</div>
+<div class="slot">Isya: ${j.isya}</div>
+<div class="slot">Jumat: ${j.dzuhur}</div>`;}
+async function loadKotaList(){
+try{
+statusEl.textContent='Memuat daftar kota…';
+const data=await fetchJSON('https://api.myquran.com/v2/sholat/kota/semua');
+const list=(data && data.data)?data.data:[];
+list.sort((a,b)=>a.lokasi.localeCompare(b.lokasi));
+kotaSelect.innerHTML=list.map(k=>`<option value="${k.id}">${k.lokasi}</option>`).join('');
+const opt=Array.from(kotaSelect.options).find(o=>/sumedang/i.test(o.textContent));
+if(opt){kotaSelect.value=opt.value;}
+statusEl.textContent='Daftar kota siap.';
+return list;
+}catch(e){statusEl.textContent='Gagal memuat daftar kota.';throw e;}
+}
+async function loadJadwalByKotaId(kotaId){
+setBusy(true);
+try{
+const today=new Date();
+const y=today.getFullYear();
+const m=String(today.getMonth()+1).padStart(2,'0');
+const d=String(today.getDate()).padStart(2,'0');
+const url=`https://api.myquran.com/v1/sholat/jadwal/${kotaId}/${y}/${m}/${d}`;
+const data=await fetchJSON(url);
+const j=data && data.data && data.data.jadwal?data.data.jadwal:null;
+if(!j)throw new Error('Format data tak terduga');
+renderJadwal(j);
+statusEl.textContent=(data.data.lokasi?`Lokasi: ${data.data.lokasi}`:'Jadwal dimuat.');
+}catch(e){statusEl.textContent='Gagal memuat jadwal. Coba lagi.';}
+finally{setBusy(false);}
+}
+async function initJadwal(){
+await loadKotaList();
+await loadJadwalByKotaId(kotaSelect.value);}
+kotaSelect.addEventListener('change',()=>loadJadwalByKotaId(kotaSelect.value));
+refreshBtn.addEventListener('click',()=>loadJadwalByKotaId(kotaSelect.value));
+initJadwal();
+
+// ===== Kalender Hijriah =====
+async function fetchHijriDate(){
+try{
+const today=new Date();
+const y=today.getFullYear();
+const m=today.getMonth()+1;
+const d=today.getDate();
+const response=await fetch(`https://api.aladhan.com/v1/gToH?date=${d}-${m}-${y}`);
+const data=await response.json();
+if(data && data.data && data.data.hijri){
+const el=document.getElementById('hijriDate');
+el.textContent=`${data.data.hijri.date} - ${data.data.hijri.month.en} ${data.data.hijri.year} H`;
+el.classList.add('show');
+}
+}catch(e){document.getElementById('hijriDate').textContent='Gagal memuat tanggal Hijriah';}}
+fetchHijriDate();
+
+// ===== Notifikasi Adzan =====
+function checkAdzan(){
+const now=new Date();
+const hours=now.getHours();
+const minutes=now.getMinutes();
+const slots=document.querySelectorAll('#jadwalGrid .slot');
+slots.forEach(slot=>{
+const text=slot.textContent;
+const match=text.match(/(\d{2}):(\d{2})/);
+if(match){
+const h=parseInt(match[1]);
+const m=parseInt(match[2]);
+if(h===hours && m===minutes){
+const audio=document.getElementById('adzanAudio');
+audio.play();
+alert('Waktu Sholat: '+text.split(':')[0]);
+}
+}});}
+setInterval(checkAdzan,60000);
+</script>
+</body>
+</html>
